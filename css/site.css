@@ -1,6 +1,6 @@
 :root{
-    --primary-color: #1d5888;
-    --secondary-color: #ff993b;
+    --primary-color: #6728b9;
+    --secondary-color: #8425ff;
     --dark-color: #1d1c1c;
     --white-color: #e7e7e7;
 }
@@ -33,6 +33,30 @@ footer .social > a{
 footer .social > a:hover{
     opacity: 0.90;
     color: var(--secondary-color);
+}
+
+.palindromeApp{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.palindromeApp:hover{
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.bottomHeadingUnderline{
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.rightHeadingUnderline{
+    border-right: 1px solid var(--secondary-color);
+}
+
+.alertBackground{
+    background-color: #d0b0fa;
+    color: var(--primary-color);
 }
 
 .bsicon{

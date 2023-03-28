@@ -2,7 +2,7 @@
 <html lang="en" class="min-vh-100">
 
 <head>
-    <title>App Name: A Coding Challenge by Vinay Jain</title>
+    <title>TACO CAT: A Coding Challenge by Vinay Jain</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
     <!-- NAV Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand logoFont" href="#"><img src="img/my signature black.png" alt="Vinay Jain Signature" width="" height="26" class="d-inline-block align-text-top"> APP NAME</a>
+            <a class="navbar-brand logoFont" href="#"><img src="img/my signature black.png" alt="Vinay Jain Signature" width="" height="26" class="d-inline-block align-text-top"> TACO CAT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Vinay352/Taco-Cat">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://code-with-vj.netlify.app/">Portfolio</a>
@@ -57,7 +57,56 @@
     <!-- MAIN Section -->
     <main class="flex-shrink-0">
        <div class="container col-xxl-8 px-4 py-5 mt-5">
-           
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="border-1 col mb-3 rightHeadingUnderline">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                    TACO CAT: A Coding Project
+                </h1>
+                
+                <h4 class="lead">
+                    A JavaScript Coding exercise that takes an input string from the user and then checks if the string is the same or not when spelled backwards, or in other words, a <b>PALINDROME</b> or not.
+                </h4>
+
+                <h2 class="mt-5 bottomHeadingUnderline border-2">
+                    Instructions
+                </h2>
+                <p>
+                    Enter a string and leave palindrome checking to Taco Cat.
+                </p>
+                <div class="col-12 border-1 bottomHeadingUnderline"></div>
+            </div>
+            
+            <div class="col">
+                <h5 class="border-1 bottomHeadingUnderline">
+                    Enter A String To Check PALINDROME.
+                </h5>
+
+                <form class="row gx-3 gy-2">
+                    <div class="col">
+                        <input id="userString" type="text" class="form-control" placeholder="Enter A String" aria-label="Enter A String">
+                    </div>
+                    <div class="col-12">
+                        <!-- <div> -->
+                            <button type="button" id="btnSubmit" class="btn palindromeApp float-end">
+                                PALINDROME?
+                            </button>
+                        <!-- </div> -->
+
+                        <div class="alert alertBackground mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 class="alert-heading">
+                                Voila!
+                            </h4>
+
+                            <hr>
+
+                            <p class="mb-0" id="msg">
+                                <!-- Insert a Message here -->
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+       </div>
        </div>
     </main>
 
@@ -126,6 +175,10 @@
     </script>
 
     <script src="js/site.js">
+    </script>
+
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
 </body>
 

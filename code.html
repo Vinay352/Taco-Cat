@@ -2,7 +2,7 @@
 <html lang="en" class="min-vh-100">
 
 <head>
-    <title>App Name: A Coding Challenge by Vinay Jain</title>
+    <title>TACO CAT: A Coding Challenge by Vinay Jain</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
     <!-- NAV Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand logoFont" href="#"><img src="img/my signature black.png" alt="Vinay Jain Signature" width="" height="26" class="d-inline-block align-text-top"> APP NAME</a>
+            <a class="navbar-brand logoFont" href="#"><img src="img/my signature black.png" alt="Vinay Jain Signature" width="" height="26" class="d-inline-block align-text-top"> TACO CAT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Vinay352/Taco-Cat">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://code-with-vj.netlify.app/">Portfolio</a>
@@ -59,28 +59,96 @@
     <!-- MAIN Section -->
     <main class="flex-shrink-0">
        <div class="container px-4 py-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">
-            The Code For "App Name".
+        <h2 class="border-1 bottomHeadingUnderline">
+            The Code For TACO CAT.
         </h2>
            <div class="row row-cols-1 row-cols-lg-2">
                 <!-- CODE -->
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call HelloWorld
-                            function HelloWorld(){
-                                alert("Hello World");
+                            // get the string from the page
+                            function getValues(){
+
+                                // add class invisible to the alert box at the beginning
+                                document.getElementById("alert").classList.add("invisible");
+
+                                // get the entered string
+                                let userString = document.getElementById("userString").value;
+                                userString = userString.toLowerCase();
+
+                                // palindrome the input string
+                                let palindromeOrNot = palindromeString(userString);
+
+                                // display the palindrome string
+                                displaypalindromeString(palindromeOrNot, userString);
+                            }
+
+
+                            // palindrome the string
+                            function palindromeString(userString){
+
+                                let n = userString.length;
+                                for (let i = 0; i < n/2; i++) {
+                                    // chars match
+                                    
+                                    if (userString[i] !== userString[n - 1 - i]) { 
+                                        // no match
+                                        return false; 
+                                    }
+                                }
+                                return true; // strictly equal
+                            }
+
+
+                            // display the palindrome string in the UI
+                            function displaypalindromeString(palindromeOrNot, userString){
+
+                                if(palindromeOrNot == false){
+                                    // getting the "msg" id, to display the message
+                                    document.getElementById("msg").innerHTML = `String Is Not A Palindrome.`;
+
+                                    // Making the alert "visible"
+                                    document.getElementById("alert").classList.remove("invisible");
+                                }else{
+                                    // getting the "msg" id, to display the message
+                                    document.getElementById("msg").innerHTML = `The input string is a palindrome = ${userString}`;
+
+                                    // Making the alert "visible"
+                                    document.getElementById("alert").classList.remove("invisible");
+                                }
+
                             }
                         </code>
                     </pre>
+
+                    <hr class="mb-2 bottomHeadingUnderline">
                 </div>
 
                 <!-- DESCRIPTION -->
                 <div class="col-lg-4">
                     <p>The code is strucutred in the box and next to it is the description of the code.</p>
 
-                    <h5>Hello World</h5>
-                    <p>Hello world is afunction that displays an alert generated "Hello World" whenever this function is called.</p>
+                    <h5>Function: getValues</h5>
+                    <p>
+                        This function is responsible to get the entered string from the UI via DOM manipulation, convert that to lower case and then pass that string to check if it is palindrome and display the output message accordingly.
+                    </p>
+
+                    <hr class="bottomHeadingUnderline">
+
+                    <h5>Function: palindromeString</h5>
+                    <p>
+                        This function is responsible for checking if the entered userString is a plaindrom or not i.e., if it is the same or not when spelled backwards. The logic is to compare the first element with the last, the second element with the second last and so on.
+                    </p>
+
+                    <hr class="bottomHeadingUnderline">
+
+                    <h5>Function: displayPalindromeString</h5>
+                    <p>
+                        If the output of "palindromeString" is true i.e., the entered string is palindrome, then the success message is printed otherwise a different message is printed saying the entered string is not a palindrome.
+                    </p>
+
+                    <hr class="bottomHeadingUnderline">
 
                 </div>
            </div>
